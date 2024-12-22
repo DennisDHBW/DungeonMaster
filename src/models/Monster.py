@@ -12,3 +12,4 @@ class Monster:
         self.__health -= damage
         if self.__health < 0:
             self.__health = 0
+

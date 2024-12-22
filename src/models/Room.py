@@ -1,3 +1,5 @@
+from src.models.Player import Player
+
 class Room:
 
     def __init__(self, description, monster):
@@ -7,6 +9,6 @@ class Room:
     def __str__(self):
         print(self.__description)
 
-    def fight_round(player):
+    def fight_round(self, player):
         pass
 
