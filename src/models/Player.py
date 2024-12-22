@@ -2,23 +2,13 @@ class Player:
 
     MAX_HEALTH = 100
 
-    def __init__(self, name: str, strength: float):
+    def __init__(self, name: str, strength: int):
         self.__name = name
         self.__health = self.MAX_HEALTH
         self.__strength = strength
 
     def __str__(self):
-        print(f"Player {self.name} has {self.__strength} strength and {self.__health} health.")
-
-    def take_damage(self, damage: float):
-        self.__health -= damage
-        if self.__health < 0:
-            self.__health = 0
-
-    def regain_health(self, health_regain: float):
-        self.__health += health_regain
-        if self.__health > self.MAX_HEALTH:
-            self.__health = self.MAX_HEALTH
+        return f"Player {self.name} has {self.__strength} strength and {self.__health} health."
 
     @property
     def name(self):
@@ -32,6 +22,17 @@ class Player:
     def strength(self):
         return self.__strength
 
+    def take_damage(self, damage: int):
+        self.__health -= int(damage)
+        if self.__health < 0:
+            self.__health = 0
+
+    def regain_health(self, health_regain: int):
+        self.__health += int(health_regain)
+        if self.__health > self.MAX_HEALTH:
+            self.__health = self.MAX_HEALTH
+
+"""
     @name.setter
     def name(self, name):
         raise AttributeError()
@@ -42,4 +43,4 @@ class Player:
 
     @health.setter
     def health(self, health):
-        raise AttributeError()
+        raise AttributeError()"""
