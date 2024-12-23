@@ -7,7 +7,7 @@ class Monster:
         self.__healthInit = health
 
     def __str__(self):
-        print(f"Monster {self.__name} has {self.__strength} strength and {self.__health} health.")
+        return f"Monster {self.__name} has {self.__strength} strength and {self.__health} health."
 
     @property
     def name(self):

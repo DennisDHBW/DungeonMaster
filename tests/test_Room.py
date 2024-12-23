@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import patch
-from Monster import Monster
-from Room import Room
-from Player import Player
+from src.models.Monster import Monster
+from src.models.Room import Room
+from src.models.Player import Player
 
 
 class TestRoom(unittest.TestCase):
