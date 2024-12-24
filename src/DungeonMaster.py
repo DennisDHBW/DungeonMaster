@@ -4,7 +4,7 @@ from src.models.Room import Room
 from random import randint
 
 def initialize_player(name: str): #unexpected
-    if len(name) <= 0:
+    if len(name) == 0:
         name = input("Please enter your name: ")
     strength = randint(40, 80)
     return Player(name, strength)
@@ -16,16 +16,13 @@ def initialize_monster(name):
 
 def initialize_rooms(room_config):
 
-    rooms_array = []
-    count_rooms = 0
+    rooms = []
     for config in room_config.values():
-        count_rooms += 1
         room_name = config["desc"]
         monster_name = config["monster"]
-        print(f"[{count_rooms}] | room: {room_name} | monster: {monster_name}")
         monster = initialize_monster(monster_name)
-        rooms_array.append(Room(room_name, monster))
-    return rooms_array
+        rooms.append(Room(room_name, monster))
+    return rooms
 
 def print_results(player: Player):
     print("---------------------------------------------") # unexpected
@@ -47,14 +44,7 @@ def run_game(nr_of_rooms):
     # start game
     print("Welcome to the Dungeon")
     player = initialize_player("")
-    #room_config = create_room_config_by_userinput(nr_of_rooms)
-    room_config = {
-        0: {"desc": "cave", "monster": "troll"},
-        1: {"desc": "home of philipp", "monster": "philipp"},
-        2: {"desc": "home of dennis", "monster": "dennis"},
-        3: {"desc": "home of test", "monster": "test"},
-        4: {"desc": "home of test2", "monster": "test2"}
-    }
+    room_config = create_room_config_by_userinput(nr_of_rooms)
     rooms = initialize_rooms(room_config)
 
     # play game
