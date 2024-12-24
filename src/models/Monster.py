@@ -22,8 +22,8 @@ class Monster:
         return self.__strength
 
     @property
-    def health_init(self):
-        return self.__healthInit
+    def lost_health(self): #unexpected
+        return self.__healthInit - self.__health
 
     def take_damage(self, damage):
         self.__health -= damage

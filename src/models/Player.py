@@ -31,16 +31,3 @@ class Player:
         self.__health += int(health_regain)
         if self.__health > self.MAX_HEALTH:
             self.__health = self.MAX_HEALTH
-
-"""
-    @name.setter
-    def name(self, name):
-        raise AttributeError()
-
-    @strength.setter
-    def strength(self, strength):
-        raise AttributeError()
-
-    @health.setter
-    def health(self, health):
-        raise AttributeError()"""

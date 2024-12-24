@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
-from Player import Player
-from DungeonMaster import initialize_player, initialize_rooms, print_results
+from src.models.Player import Player
+from src.DungeonMaster import initialize_player, initialize_rooms, print_results
 
 
 class TestDungeonMaster(unittest.TestCase):
