@@ -1,1 +1,0 @@
-# Ordner 'models' wird durch die '__init__.py' als Python-Paket markiert.

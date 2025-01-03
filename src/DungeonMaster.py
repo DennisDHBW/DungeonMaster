@@ -1,19 +1,23 @@
 from src.models.Player import Player
 from src.models.Monster import Monster
 from src.models.Room import Room
-from random import randint
+import random
 
+# funktion zur initialisierung des spielers (name + zufaellige starke zwischen 40 und 80)
 def initialize_player(name: str): #unexpected
     if len(name) == 0:
         name = input("Please enter your name: ")
-    strength = randint(40, 80)
+    strength = random.randint(40, 80)
     return Player(name, strength)
 
-def initialize_monster(name):
-    health = randint(40, 80)
-    strength = randint(20, 40)
+# funktion zur initialisierung des monsters (name + zufaellige starke zwischen 20 und 40
+# + zufaelliges leben zwischen 40 und 80)
+def initialize_monster(name: str):
+    strength = random.randint(20, 40)
+    health = random.randint(40, 80)
     return Monster(name, strength, health)
 
+# funktion zur initialisierung der raeume analog der room_config
 def initialize_rooms(room_config):
 
     rooms = []
@@ -24,6 +28,7 @@ def initialize_rooms(room_config):
         rooms.append(Room(room_name, monster))
     return rooms
 
+# funktion zum ausgeben/printen der ergebnisse inkl. spieler abschluss stats
 def print_results(player: Player):
     print("---------------------------------------------") # unexpected
     print("The game is over!")
@@ -31,6 +36,7 @@ def print_results(player: Player):
     print("Thank you for playing Dungeon Master!")
     print("Good Bye!")
 
+# funktion zur erstellung der room_config analog user eingaben
 def create_room_config_by_userinput(nr_of_rooms):
     room_config = {}
     for room_nr in range(nr_of_rooms):
@@ -39,6 +45,7 @@ def create_room_config_by_userinput(nr_of_rooms):
         room_config[room_nr] = {"desc": room, "monster": monster}
     return room_config
 
+# funktion um das spiel zu starten (unter eingabe der raum anzahl)
 def run_game(nr_of_rooms):
 
     # start game
