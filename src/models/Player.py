@@ -3,7 +3,7 @@ class Player:
     # konstante mit maximalen spielerlebenspunkten
     MAX_HEALTH = 100
 
-    # initialisierung des objekts mit privaten instanzvariablen
+    # initialisierung des objekts mit privaten instanzvariablen (konstruktor: name als string und strength als integer)
     def __init__(self, name: str, strength: int):
         self.__name = name
         self.__health = self.MAX_HEALTH
