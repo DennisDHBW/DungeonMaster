@@ -8,8 +8,8 @@ class Room:
         self.__description = description
         self.__monster = monster
 
-    # objekt string - wenn ein objekt der klasse room geprintet wird, dann
-    # wird der nachfolgende string zurueckgegeben
+    # objekt string - wenn eine objektinstanz der klasse room geprintet wird, dann
+    # wird der nachfolgende string zurueckgegeben (raumbeschreibung)
     def __str__(self):
         return str(self.__description)
 
@@ -22,7 +22,7 @@ class Room:
     def monster(self):
         return self.__monster
 
-    # objekt funktion damit der spieler eine runde mit dem monster des raumes
+    # methode damit der spieler eine runde mit dem monster des raumes
     # kaempfen kann. ablauf: monsterangriff (+auswirkungen) dann Spielerangriff (+auswirkungen)
     def fight_round(self, player: Player):
 
@@ -51,7 +51,7 @@ class Room:
         else:
             print(monster)
 
-    # objekt funktion damit der spieler mit dem raum interagieren kann.
+    # methode damit der spieler mit dem raum interagieren kann.
     # moeglichkeiten: fluechten oder kaempfen
     def interact(self, player: Player):
 

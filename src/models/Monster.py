@@ -29,7 +29,7 @@ class Monster:
     def lost_health(self): #unexpected
         return self.__healthInit - self.__health
 
-    # objekt funktion um das leben des monsters zu reduzieren
+    # methode um das leben des monsters zu reduzieren
     def take_damage(self, damage):
         self.__health -= damage
         if self.__health < 0:
