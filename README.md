@@ -148,8 +148,11 @@ Die folgenden Methoden sind zu implementieren:
    (Achtung! Die Abgabe wird nur als vollständig gewertet, wenn Sie die Fragen ebenfalls beantwortet haben!)
     1. Was war Ihre größte Herausforderung bei der Implementierung der Aufgabe?
         - Teilweise musste ich feststellen, dass ich etwas vom Skript abgewichen bin. Das habe ich dann nachträglich angepasst.
+        - Unit-Tests wurden bisher nicht behandelt. Daher musste ich mich online einlesen wie man Unit-Tests nutzt.
+        - Teilweise habe ich Funktionen hinzugefügt, die ich gerne eingebaut hätte, welche ich jedoch nachträglich wieder entfernt habe.
         - Ich habe den Satz "Diese Methode initialisiert den Spieler, indem Sie den Namen des Spielers abfragt und [...]" 
-          falsch verstanden, da laut Unit Test dem Konstruktur der Methode "initialize_player" ein Name übergeben wird. Damit der Unit Test nicht fehlschlägt und ich die input Aufforderung weiterhin innerhalb der Methode "initialize_player" lassen kann, habe ich eine zusätzliche Abfrage eingebaut, welche prüft ob ein leerer String übergeben wurde. Falls ja dann, dann user input.
+          falsch verstanden, da laut Unit Test dem Konstruktur der Methode "initialize_player" ein Name übergeben wird. Damit der Unit Test nicht fehlschlägt und ich die input Aufforderung weiterhin innerhalb der Methode "initialize_player" lassen kann, habe ich eine zusätzliche Abfrage eingebaut, welche prüft ob ein leerer String übergeben wurde. Falls ja, dann user input.
+        - Verständnis der Anforderungen und exakte Umsetzung der Anforderungen
 
     2. Welche Fehler/Bugs sind im Verlauf der Implementierung aufgetreten? Wie haben Sie diese gefunden und gelöst?
         - Funktion "lost_health" verursachte Fehler im Unit Test --> Funktion dem Code hinzugefügt 
@@ -168,5 +171,7 @@ Die folgenden Methoden sind zu implementieren:
     4. Wie könnten Sie dieses Projekt in Zukunft erweitern, um das Spiel interessanter oder komplexer zu machen?
         - Verzögerungen zwischen den Angriffen mit der sleep Funktion   
         - Schwierigkeitsstufen
+        - Speicherfunktion (speichern und laden des Spielfortschritts)
         - Items (Tränke, Rüstung, Waffen, ...)
         - Fähigkeiten (Ausweichen, Täuschen, ...)
+        - Mehr Variation durch zufällige kritische Treffer
