@@ -30,7 +30,7 @@ class Monster:
     # definierung einer getter methode (@property) mit dem namen "lost_health" fuer die private instanzvariable __healthInit
     @property
     def lost_health(self):
-        return self.__healthInit
+        return self.__healthInit - self.__health
 
     # methode um das leben des monsters zu reduzieren
     def take_damage(self, damage):
