@@ -3,7 +3,7 @@ from src.models.Monster import Monster
 from src.models.Room import Room
 import random
 
-# funktion zur initialisierung des spielers (name + zufaellige staerke von 40 bis 80 + rueckgabe des spielerobjekts)
+# funktion zur initialisierung des spielers (uebergabe von: name + zufaelliger staerke von 40 bis 80 + rueckgabe des spielerobjekts)
 # name kann dem konstruktur uebergeben werden. falls ein leerer string uebergeben wird, kann der spieler seinen namen
 # ueber die konsole eingeben.
 def initialize_player(name: str):
@@ -12,7 +12,7 @@ def initialize_player(name: str):
     strength = random.randint(40, 80) # zufaellige staerke von 40 bis 80 (40, 41, ..., 80)
     return Player(name, strength) # gibt eine objektinstanz der klasse player zurueck
 
-# funktion zur initialisierung des monsters (name + zufaellige starke zwischen 20 und 40
+# funktion zur initialisierung des monsters (name + zufaellige staerke zwischen 20 und 40
 # + zufaelliges leben zwischen 40 und 80 + rueckgabe eines objekts vom typ monster)
 def initialize_monster(name: str):
     strength = random.randint(20, 40) # zufaellige staerke von 20 bis 40 (20, 21, ..., 40)
@@ -22,12 +22,12 @@ def initialize_monster(name: str):
 # funktion zur initialisierung der raeume analog der room_config + rueckgabe einer liste, welche objekte vom
 # typ room enthaelt
 def initialize_rooms(room_config):
-    rooms = [] # definierung einer liste
-    for config in room_config.values(): # loop durch den array "room_config", welcher aus dictionaries besteht
+    rooms = [] # definition einer liste
+    for config in room_config.values(): # loop durch die werte des dictionaries "room_config"
         room_name = config["desc"] # name des raums auslesen in dem key "desc" des dicts "config" verwendet wird
         monster_name = config["monster"] # name des monsters auslesen in dem key "monster" des dicts verwendet wird
         monster = initialize_monster(monster_name) # initialisierung einer objekt instanz vom typ monster durch die entsprechende funktion
-        rooms.append(Room(room_name, monster)) # liste "rooms" um eine objektinstanz der klasse room erweitert
+        rooms.append(Room(room_name, monster)) # liste "rooms" wird um eine objektinstanz der klasse room erweitert
     return rooms # liste mit objekten vom typ room wird zurueckgegeben
 
 # funktion zum drucken bzw. printen der ergebnisse inkl. spieler abschluss stats in der konsole
@@ -38,16 +38,16 @@ def print_results(player: Player):
     print("Thank you for playing Dungeon Master!")
     print("Good Bye!")
 
-# funktion zur erstellung der room_config analog user eingaben
+# funktion zur erstellung der room_config analog der benutzereingaben
 def create_room_config_by_userinput(nr_of_rooms):
-    room_config = {} # definierung eines dictionaries
+    room_config = {} # definition eines dictionaries
     for room_nr in range(nr_of_rooms): # loop basierend auf wert der variable nr_of_rooms
-        room = input(f"Please enter a room name ({room_nr + 1} of {nr_of_rooms}): ") # user input - raum name der jeweiligen raumnummer
-        monster = input(f"Please enter a monster name ({room_nr + 1} of {nr_of_rooms}): ") # user input - monster name der jeweiligen raumnummer
+        room = input(f"Please enter a room name ({room_nr + 1} of {nr_of_rooms}): ") # benutzereingabe - raum name der jeweiligen raumnummer
+        monster = input(f"Please enter a monster name ({room_nr + 1} of {nr_of_rooms}): ") # benutzereingabe - monster name der jeweiligen raumnummer
         room_config[room_nr] = {"desc": room, "monster": monster} # befuellen des dictionary "room_config" mit dem key "room_nr"
     return room_config # rueckgabe des dictionary "room_config" nach den erstellen x raeumen (x = nr_of_rooms)
 
-# funktion um das spiel zu starten (unter eingabe der raum anzahl)
+# funktion um das spiel zu starten (unter angabe der raumanzahl)
 def run_game(nr_of_rooms):
 
     # spielstart

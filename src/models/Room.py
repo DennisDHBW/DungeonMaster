@@ -8,17 +8,17 @@ class Room:
         self.__description = description # initialisierung der privaten instanzvariable __description mit dem im konstruktur uebergebenen wert (gespeichert in description)
         self.__monster = monster # initialisierung der privaten instanzvariable __monster mit dem im konstruktur uebergebenen objektinstanz monster
 
-    # objekt string - wenn eine objektinstanz der klasse room geprintet wird, dann
+    # objekt-string - wenn eine objektinstanz der klasse room geprintet wird, dann
     # wird der nachfolgende string zurueckgegeben (raumbeschreibung)
     def __str__(self):
         return str(self.__description) # rueckgabe des strings, welcher in der privaten instanzvariable __description steht
 
-    # definierung einer getter methode (@property) mit dem namen "description" fuer die private instanzvariable __description
+    # definition einer getter methode (@property) mit dem namen "description" fuer die private instanzvariable __description
     @property
     def description(self):
         return self.__description
 
-    # definierung einer getter methode (@property) mit dem namen "monster" fuer die private instanzvariable __monster
+    # definition einer getter methode (@property) mit dem namen "monster" fuer die private instanzvariable __monster
     @property
     def monster(self):
         return self.__monster
@@ -68,9 +68,10 @@ class Room:
                     print("You chose RUN!") # ... konsolenausgabe
                     player.take_damage(10) # ... und aufruf der funktion take_damage der objektinstanz player mit dem wert 10
                     print("You sprint out of the room and take 10 damage!") # ... und konsolenausgabe
+                    print(player) # ... ausgabe des spielerobjektes
                     break # ... und brich den schleifendurchlauf ab
                 case "f" | "fight": # falls "f" oder "fight" eingegeben wurde ...
                     print("You chose FIGHT!") # ... konsolenausgabe
-                    self.fight_round(player) # aufruf der funktion fight_around mit der objektinstanz player
+                    self.fight_round(player) # aufruf der funktion fight_round mit der objektinstanz player
                 case _: # bei nicht definierten faellen (falls die ersten beiden faelle nicht matchen) ...
                     print(f"[{action}] is an invalid action.") # ...konsolenausgabe

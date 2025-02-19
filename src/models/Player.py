@@ -9,22 +9,22 @@ class Player:
         self.__health = self.MAX_HEALTH # private instanzvariable __health erhaelt den wert der konstanten variable MAX_HEALTH
         self.__strength = strength # private instanzvariable __strength erhaelt den bei der initialisierung uebergebenen wert (gespeichert in variable "strength" vom typ int)
 
-    # objekt string - wenn eine objektinstanz der klasse player geprintet wird, dann
+    # objekt-string - wenn eine objektinstanz der klasse player geprintet wird, dann
     # wird der nachfolgende string zurueckgegeben (mit spielername, spieler staerke, spielerleben)
     def __str__(self):
         return f"Player {self.name} has {self.__strength} strength and {self.__health} health."
 
-    # definierung einer getter methode (@property) mit dem namen "name" fuer die private instanzvariable __name
+    # definition einer getter methode (@property) mit dem namen "name" fuer die private instanzvariable __name
     @property
     def name(self):
         return self.__name # rueckgabe des wertes, der in der privaten instanzvariable __name gespeichert ist
 
-    # definierung einer getter methode (@property) mit dem namen "health" fuer die private instanzvariable __health
+    # definition einer getter methode (@property) mit dem namen "health" fuer die private instanzvariable __health
     @property
     def health(self):
         return self.__health # rueckgabe des wertes, der in der privaten instanzvariable __health gespeichert ist
 
-    # definierung einer getter methode (@property) mit dem namen "strength" fuer die private instanzvariable __strength
+    # definition einer getter methode (@property) mit dem namen "strength" fuer die private instanzvariable __strength
     @property
     def strength(self):
         return self.__strength # rueckgabe des wertes, der in der privaten instanzvariable __strength gespeichert ist

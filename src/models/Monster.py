@@ -7,27 +7,27 @@ class Monster:
         self.__health = health # initialisierung der privaten instanzvariable __health mit dem im konstruktur uebergebenen wert (gespeichert in health)
         self.__healthInit = health # initialisierung der privaten instanzvariable __healthInit mit dem im konstruktur uebergebenen wert (gespeichert in health) fuer "lost_health" funktion
 
-    # objekt string - wenn eine objektinstanz der klasse monster geprintet wird, dann
+    # objekt-string - wenn eine objektinstanz der klasse monster geprintet wird, dann
     # wird der nachfolgende string zurueckgegeben
     def __str__(self):
         return f"Monster {self.__name} has {self.__strength} strength and {self.__health} health."
 
-    # definierung einer getter methode (@property) mit dem namen "name" fuer die private instanzvariable __name
+    # definition einer getter methode (@property) mit dem namen "name" fuer die private instanzvariable __name
     @property
     def name(self):
         return self.__name
 
-    # definierung einer getter methode (@property) mit dem namen "health" fuer die private instanzvariable __health
+    # definition einer getter methode (@property) mit dem namen "health" fuer die private instanzvariable __health
     @property
     def health(self):
         return self.__health
 
-    # definierung einer getter methode (@property) mit dem namen "strength" fuer die private instanzvariable __strength
+    # definition einer getter methode (@property) mit dem namen "strength" fuer die private instanzvariable __strength
     @property
     def strength(self):
         return self.__strength
 
-    # definierung einer getter methode (@property) mit dem namen "lost_health" fuer die berechnung des erlittenen schaden
+    # definition einer getter methode (@property) mit dem namen "lost_health" fuer die berechnung des erlittenen schaden
     # durch das subtrahieren der privaten instanzvariable __health von der private instanzvariable __healthInit
     @property
     def lost_health(self):
