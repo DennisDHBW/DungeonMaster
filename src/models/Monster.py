@@ -27,7 +27,8 @@ class Monster:
     def strength(self):
         return self.__strength
 
-    # definierung einer getter methode (@property) mit dem namen "lost_health" fuer die private instanzvariable __healthInit
+    # definierung einer getter methode (@property) mit dem namen "lost_health" fuer die berechnung des erlittenen schaden
+    # durch das subtrahieren der privaten instanzvariable __health von der private instanzvariable __healthInit
     @property
     def lost_health(self):
         return self.__healthInit - self.__health
